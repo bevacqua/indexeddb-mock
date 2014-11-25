@@ -84,9 +84,11 @@ function resetIndexedDBMock () {
 	mockIndexedDBTestFlags.canOpenDB = true;
 	mockIndexedDBTestFlags.openDBShouldBlock = false;
 	mockIndexedDBTestFlags.openDBShouldAbort = false;
+  mockIndexedDBTestFlags.upgradeNeeded = false;
 	mockIndexedDBTestFlags.canReadDB = true;
 	mockIndexedDBTestFlags.canSave = true;
 	mockIndexedDBTestFlags.canDelete = true;
+  mockIndexedDBTestFlags.canClear = true;
 	mockIndexedDBTestFlags.canCreateStore = true;
 	mockIndexedDBTestFlags.canDeleteDB = true;
 
@@ -621,5 +623,6 @@ var mockIndexedDB = {
 module.exports = {
   reset: resetIndexedDBMock,
   commit: commitIndexedDBMockData,
-  mock: mockIndexedDB
+  mock: mockIndexedDB,
+  flags: mockIndexedDBTestFlags
 };

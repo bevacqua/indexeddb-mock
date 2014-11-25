@@ -26,6 +26,27 @@ Resets state in the mock. Call this before tests to reset state.
 
 Adds an item with `key` and `value`. Used to prefill IndexedDB before tests.
 
+##### `.flags`
+
+You can set flags to determine what features are enabled. Here's the defaults.
+
+```json
+{
+  "canOpenDB": true,
+  "openDBShouldBlock": false,
+  "openDBShouldAbort": false,
+  "upgradeNeeded": false,
+  "canReadDB": true,
+  "canSave": true,
+  "canDelete": true,
+  "canClear": true,
+  "canCreateStore": true,
+  "canDeleteDB": true
+}
+```
+
+Note that flags are reset to their defaults whenever `.reset()` is called.
+
 # License
 
 MIT
