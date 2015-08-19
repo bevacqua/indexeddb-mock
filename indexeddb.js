@@ -413,7 +413,16 @@ var mockIndexedDBDatabase = {
 var mockIndexedDBOpenDBRequest = {
 	callSuccessHandler: function () {
 		if (this.onsuccess) {
-			var event = new CustomEvent("success", { bubbles: false, cancelable: true });
+			
+			var event = {
+				'type' : 'success',
+				'bubbles' : false,
+				'cancelable' : true,
+				'target' : {
+					'result' : mockIndexedDBDatabase
+				}
+			};
+			
 			this.onsuccess(event);
 		}
 	},
