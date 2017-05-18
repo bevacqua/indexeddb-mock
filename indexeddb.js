@@ -274,6 +274,11 @@ var mockIndexedDBStore = {
 		return mockIndexedDBTransaction;
 	},
 
+	get: function (key) {
+		mockIndexedDBTransaction.callCompleteHandler();
+		return mockIndexedDBTransaction;
+	},
+
 	// for delete, the listeners are attached to a request returned from the store.
 	delete: function (data_id) {
 		if (mockIndexedDBTestFlags.canDelete === true) {
